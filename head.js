@@ -26,4 +26,3 @@ console.log(assertEqual(head([8,6,7]), 5));
 console.log(assertEqual(head([5]), 5));
 console.log(assertEqual(head([8]), 5));
 console.log(assertEqual(head([]), 5));
-console.log((head([])));
