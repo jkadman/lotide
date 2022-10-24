@@ -21,13 +21,17 @@ const eqArrays = function(arr1, arr2) {
 
  const without = function(source, itemsToRemove) {
   let unique = [];
-  for (let sources of source) {
-    if (sources !== itemsToRemove) {
-      unique.push(sources);
+  for (let i = 0; i <source.length; i++) {
+    if (source[i] !== itemsToRemove[i]) {
+      unique.push(source[i]);
     }
   }
+  console.log(source);
   return unique;
  }
+
+console.log(without([1, 2, 3], [1])) // => [2, 3]
+console.log(without(["1", "2", "3"], [1, 2, "3"])) // => ["1", "2"]
 
  /*
 This function should take in a source array and a itemsToRemove array. It should return a new array with only those elements from source that are not present in the itemsToRemove array.
