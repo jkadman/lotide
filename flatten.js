@@ -23,9 +23,13 @@ const eqArrays = function(arr1, arr2) {
  }
 
 const flatten = function(array) {
-  const flattArr = array.flat();
+  let flattArr = [];
+  if (Array.isArray(array)) {
+  flattArr = array.flat();
+  } 
   return flattArr;
 };
 
 console.log(flatten([1, 2, [3, 4], 5, [6]])) // => [1, 2, 3, 4, 5, 6]
 assertArraysEqual(flatten([1, 2, 3, 3, 1, 4, 5]), [1, 2, 3, 3, 1, 4, 5]);
+console.log(flatten('bob', 'chris'));
