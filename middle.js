@@ -19,13 +19,13 @@ const eqArrays = function(arr1, arr2) {
   return true;
  }
 
- let middle = function(array) {
+ const middle = function(array) {
   let midpoint = [];
-  if (array.length < 2) {
-    return;
+  if (array.length <= 2) {
+    return midpoint;
   } else if (array.length % 2 !== 0) {
-    midpoint = (array.length) / 2;
-    midpoint = Math.ceil(midpoint);
+    // midpoint = array.length / 2;
+    midpoint = Math.ceil(array.length / 2);
   } else {
     let mid = array.length / 2;
     midpoint = [array[mid - 1], array[mid]];
@@ -36,10 +36,14 @@ const eqArrays = function(arr1, arr2) {
 let small = [1, 2];
 let odd = [1, 2, 3, 4, 5];
 let even = [1, 2, 3, 4, 5, 6];
-console.log(middle([1, 2]));
-console.log(middle(odd));
-console.log(middle(even));
-
+// console.log(middle([small]));
+// console.log(middle(odd));
+// console.log(middle(even));
+assertArraysEqual(middle([1, 2]), [1, 2]);
+// assertArraysEqual(middle([small]), [1, 2]);
+ assertArraysEqual(middle(odd), 3);
+// assertArraysEqual(middle(even), [3, 4]);
+// assertArraysEqual(middle(even), [7, 4]);
 
  /*
 Implement middle which will take in an array and return the middle-most element(s) of the given array.
