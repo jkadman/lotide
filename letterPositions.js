@@ -30,19 +30,24 @@ We'll implement a new function letterPositions which will return all the indices
 // each letter that shows the indices of that letter(not sure how to do this -- another function?)
 
 const letterPositions = function(sentence) {
-  const results = {};
-  let newArr = Array.from(string)
-  for (let letter of string) {
-    results = string[letter];
+  let results = {};
+  let newArr = Array.from(sentence)
+  for (let letter of newArr) {
+    if (letter !== ' ') {
+    //if (results[letter] !== 1) {
+      results[letter] = [newArr.indexOf(letter, 0)];
+    //} else {
+      //results[letter] = [1];
+    //}
+    
   }
-  return results;
-};
-
-let string = 'hello';
-let newArr = Array.from(string);
-//console.log(newArr);
-for (let letter of string) {
-  console.log(newArr.indexOf(letter));
+  
+}
+return results;
 }
 
-assertArraysEqual()
+test = 'Hello'
+test2 = "lighthouse in the house"
+console.log(letterPositions(test))
+console.log(letterPositions(test2))
+//assertArraysEqual(letterPositions(test).H, 0);

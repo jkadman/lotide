@@ -1,12 +1,9 @@
-let test = [1 , 2 , 3, 4, 1, 1, 2, 6];
-num = {};
-for (let tet of test) {
-  if (tet === 1) {
-    num.bug = 1;
-    num.bug++;
-  }
+const indices = [];
+const array = ['a', 'b', 'a', 'c', 'a', 'd'];
+const element = 'a';
+let idx = array.indexOf(element);
+while (idx !== -1) {
+  indices.push(idx);
+  idx = array.indexOf(element, idx + 1);
 }
-
-console.log(num);
-
-// Want to say, each type you find x value in the object return + 1
+console.log(indices);
