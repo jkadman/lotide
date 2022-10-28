@@ -1,10 +1,12 @@
+let test = [1 , 2 , 3, 4, 1, 1, 2, 6];
+num = {};
+for (let tet of test) {
+  if (tet === 1) {
+    num.bug = 1;
+    num.bug++;
+  }
+}
 
-let names = [0, 1, 2, 7, 5];
-// let midNames = (names.length) / 2;
-// let midTwo = [names[midNames], names[midNames - 1]]
-//let number = number.pop(midNames);
-// console.log(midTwo);
+console.log(num);
 
-let midNames = (names.length - 1) / 2
-console.log(midNames);
-
+// Want to say, each type you find x value in the object return + 1
