@@ -1,3 +1,5 @@
+const { parse } = require("yargs");
+
 const assertArraysEqual = function(arr1, arr2) {
   if (eqArrays(arr1, arr2)) {
     console.log(`🐵🐵🐵 Assertion Passed: [${arr1}] === [${arr2}]`);
@@ -33,22 +35,21 @@ const letterPositions = function(sentence) {
   let results = {};
   let newArr = Array.from(sentence)
   for (let i = 0; i < newArr.length; i++) {
-  //for (let letter of newArr) {
     let letter = newArr[i];
     if (letter !== ' ') {
-      if (results[letter] !== 1) {
-      //results[letter] = [newArr.indexOf(letter, 0)];
-        console.log(i, letter, results)
+      if (!results[letter]) {
         results[letter] = [i]
-      } 
+      } else {
+        results[letter].push(i) 
+      }
     }
   }
-  return results;
+   return results;
 }
 
 
 test = 'Hello'
 test2 = "lighthouse in the house"
-console.log(letterPositions(test))
+//console.log(letterPositions(test))
 //console.log(letterPositions(test2))
-//assertArraysEqual(letterPositions(test).H, 0);
+assertArraysEqual(letterPositions(test).H, 0);
