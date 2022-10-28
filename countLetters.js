@@ -25,5 +25,5 @@ const assertEqual = function(actual, expected) {
 };
 
 console.log(countLetters('Lighthouse in the house!'));
-console.log(countLetters('LHL LHL'));
-console.log(assertEqual(countLetters('LHL'), { L: 2 }))
+console.log(countLetters('LHL'));
+console.log(assertEqual(countLetters('LHL'), { L: 2, H: 1}))
