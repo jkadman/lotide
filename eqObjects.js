@@ -18,57 +18,55 @@ Implement the function in order to pass the assertions written so far.
 //if statement: each value key pair is the same, assertion passed, otherwise fail
 
 const eqArrays = function(arr1, arr2) {
-  if (arr1.length !== arr2.length) {
+  let newArr1 = arr1.flat();
+  let newArr2 = arr2.flat();
+  if (newArr1.length !== newArr2.length) {
     return false;
-  } else {
+  }  
   for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
+    if (newArr1[i] !== newArr2[i]) {
       return false;
     } 
   }
   return true;
- }
-};
+ } 
+
+//Modify our implementation to use eqArrays when there is an array value being encountered for a key, ensuring that our newly added array tests fully pass.
+
 
 const eqObjects = function(object1, object2) {
   let arr1 = Object.keys(object1);
   let arr2 = Object.keys(object2);
+  if ((arr1, arr2)); {
   if (arr1.length !== arr2.length) {
     return false;
   } for (let key of arr1) {
-    if (object1.hasOwnProperty(key)) {
+    if (Array.isArray(arr1) || Array.isArray(arr2)) {
+      eqArrays(arr1, arr2);
+    } else if (object1.hasOwnProperty(key)) {
       if (object1[key] !== object2[key])
       return false;
       } 
     };
 return true;
-};
+}
+}
   
-// const cd = { c: "1", d: ["2", 3] };
-// const dc = { d: ["2", 3], c: "1" };
-// console.log(eqObjects(cd, dc)); // => true
+const cd = { c: "1", d: ["2", 3] };
+const dc = { d: ["2", 3], c: "1" };
+console.log(eqObjects(cd, dc)); // => true
 
-// const cd2 = { c: "1", d: ["2", 3, 4] };
-// console.log(eqObjects(cd, cd2)); // => false
-const foo = {a: '3',b: '9', c: '5' }
-const foo2 = {a: '3',b: '9', c: '5' }
-const boo = {a: '3', b: '6', t: '9', g: '3'}
-const boo2 = {a: '3', b: '6', t: '9', g: '3'}
-const fli = {}
-const fli2 = {};
+const cd2 = { c: "1", d: ["2", 3, 4] };
+console.log(eqObjects(cd, cd2)); // => false
 
-console.log(eqObjects(foo, foo2))
-console.log(eqObjects(boo, boo2))
-console.log(eqObjects(foo, boo))
-console.log(eqObjects(foo2, boo2))
-console.log(eqObjects(foo, fli))
-console.log(eqObjects(fli2, fli))
 
-// const ab = { a: "1", b: "2" };
-// const ba = { b: "2", a: "1" };
-// console.log(eqObjects(ab, ba));
 
-//console.log(assertEqual(eqObjects(ab, ba))); // => true
+ const ab = { a: "1", b: "2" };
+ const ba = { b: "2", a: "1" };
+ console.log(eqObjects(ab, ba));
+
+console.log((eqObjects(ab, ba))); // => true
+console.log(eqObjects(ab, cd))
 
 //const abc = { a: "1", b: "2", c: "3" };
 //console.log(assertEqual(eqObjects(ab, abc))); // => false
