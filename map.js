@@ -29,8 +29,20 @@ return results;
 };
 
 
-const words = ["ground", "control", "to", "major", "tom"];
+// const words = ["ground", "control", "to", "major", "tom"];
 
-const results1 = map(words, word => word[0]);
-assertArraysEqual(results1, ['g', 'c', 't', 'm', 't']);
-assertArraysEqual(results1, ['g', 'c', 't', 'm', 't', 'y']);
+// const results1 = map(words, word => word[0]);
+// assertArraysEqual(results1, ['g', 'c', 't', 'm', 't']);
+// assertArraysEqual(results1, ['g', 'c', 't', 'm', 't', 'y']);
+
+// Check to see if the words in the array are strings:
+const test1 = ['fear', 'bring', 'leah', 'push', 'bear'];
+const test1Results = map(test1, entry => {if (typeof entry === 'string') {console.log(`${entry} is a string!`)}})
+
+// Check to see if numbers in array are even:
+const test2 = [2, 5, 8, 14, 20, 19];
+const test2Results = map(test2, num => {if (num % 2 === 0) {console.log(`${num} is prime!`)}})
+
+// multiple the numbers in the array by itself
+const test3 = [2, 6, 7, 3, 1];
+const test3Results = map(test3, integer => console.log((integer * integer)));
