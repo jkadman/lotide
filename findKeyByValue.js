@@ -12,7 +12,7 @@ Implement the function findKeyByValue which takes in an object and a value. It s
 // create loop to look over function
 // if statement so that if a genre === value we return a show, or if a show is === value we return the genre
 
-
+// Oct 30 - could fix this so that undefined doesn't assert equal
 const findKeyByValue = function(object, value) {
   for (let genre in object) {
     if (genre) {
@@ -38,4 +38,5 @@ const bestTVShowsByGenre = {
 //console.log(findKeyByValue(bestTVShowsByGenre, 'Zim'));
 
 console.log(assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama"));
+console.log(assertEqual(findKeyByValue(bestTVShowsByGenre, "comedy"), "Brooklyn Nine-Nine"));
 console.log(assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined));
