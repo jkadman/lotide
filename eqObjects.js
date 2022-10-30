@@ -1,8 +1,9 @@
 const assertArraysEqual = function(arr1, arr2) {
+  const inspect = require('util').inspect;
   if (eqObjects(arr1, arr2)) {
-    console.log(`🐵🐵🐵 Assertion Passed: [${arr1}] === [${arr2}]`);
+    console.log(`🐵🐵🐵 Assertion Passed: [${inspect(arr1)}] === [${inspect(arr2)}]`);
   } else {
-    console.log(`😆😆😆 Assertion Failed: [${arr1}] !== [${arr2}]`);
+    console.log(`😆😆😆 Assertion Failed: [${inspect(arr1)}] !== [${inspect(arr2)}]`);
   }
 };
 /*
@@ -32,7 +33,7 @@ const eqArrays = function(arr1, arr2) {
  } 
 
 //Modify our implementation to use eqArrays when there is an array value being encountered for a key, ensuring that our newly added array tests fully pass.
-
+// Oct 30 - removed final else if statement : else if (object1.hasOwnProperty(key)) {...} in favour of else statement
 
 const eqObjects = function(object1, object2) {
   let arr1 = Object.keys(object1);
@@ -43,7 +44,7 @@ const eqObjects = function(object1, object2) {
     } for (let key of arr1) {
       if (Array.isArray(key) || Array.isArray(object2[key])) {
         return eqArrays(object1[key], object2[key]);
-      } else if (object1.hasOwnProperty(key)) {
+      } else {
         if (object1[key] !== object2[key])
         return false;
         } 
@@ -59,11 +60,8 @@ console.log(assertArraysEqual(cd, dc)); // => true
 const cd2 = { c: "1", d: ["2", 3, 4] };
 console.log(eqObjects(cd, cd2)); // => false
 
-
-
- const ab = { a: "1", b: "2" };
- const ba = { b: "2", a: "1" };
- console.log(eqObjects(ab, ba));
+const ab = { a: "1", b: "2" };
+const ba = { b: "2", a: "1" };
 
 console.log((eqObjects(ab, ba))); // => true
 console.log(assertArraysEqual(ab, cd))
