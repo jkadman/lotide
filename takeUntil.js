@@ -3,7 +3,7 @@ Implement takeUntil which will keep collecting items from a provided array until
 */
 
 // need an array to push the results to
-// need to loop through the array 
+// need to loop through the array
 // need an if statement where if the call back is triggered, the loop stops
 // return new array
 
@@ -20,14 +20,14 @@ const eqArrays = function(arr1, arr2) {
   let newArr2 = arr2.flat();
   if (newArr1.length !== newArr2.length) {
     return false;
-  }  
+  }
   for (let i = 0; i < arr1.length; i++) {
     if (newArr1[i] !== newArr2[i]) {
       return false;
-    } 
+    }
   }
   return true;
- } 
+};
 
 const takeUntil = function(array, callback) {
   let newArr = [];
@@ -38,7 +38,7 @@ const takeUntil = function(array, callback) {
     } else {
       return newArr;
     }
-  } 
+  }
   return newArr;
 };
 
@@ -61,11 +61,11 @@ console.log('---');
 const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
 const results2 = takeUntil(data2, x => x === ',');
 console.log(results2);
-assertArraysEqual(results2,["I've", 'been', 'to', 'Hollywood'] );
+assertArraysEqual(results2,["I've", 'been', 'to', 'Hollywood']);
 
 console.log('---');
 
 const data2Fail = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
 const results2Fail = takeUntil(data2, x => x === ',');
 console.log(results2);
-assertArraysEqual(results2,["I've", 'been', 'to', 'Hollywood', 'been'] );
+assertArraysEqual(results2,["I've", 'been', 'to', 'Hollywood', 'been']);
