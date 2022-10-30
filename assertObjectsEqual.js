@@ -32,7 +32,7 @@ const eqArrays = function(arr1, arr2) {
     } for (let key of arr1) {
       if (Array.isArray(key) || Array.isArray(object2[key])) {
         return eqArrays(object1[key], object2[key]);
-      } else if (object1.hasOwnProperty(key)) {
+      } else {
         if (object1[key] !== object2[key])
         return false;
         } 
@@ -48,13 +48,19 @@ console.log(assertObjectsEqual(cd, dc)); // => true
 const cd2 = { c: "1", d: ["2", 3, 4] };
 console.log(assertObjectsEqual(cd, cd2)); // => false
 
-
-
- const ab = { a: "1", b: "2" };
- const ba = { b: "2", a: "1" };
- console.log(assertObjectsEqual(ab, ba)); // => true
+const ab = { a: "1", b: "2" };
+const ba = { b: "2", a: "1" };
+console.log(assertObjectsEqual(ab, ba)); // => true
 
 console.log(assertObjectsEqual(ab, cd)) // => false
 
 const abc = { a: "1", b: "2", c: "3" };
 console.log((assertObjectsEqual(ab, abc))); // => false
+
+const yz = [];
+const zy = [1];
+console.log((assertObjectsEqual(yz, zy)));
+
+const kl = [];
+const lk = [];
+console.log((assertObjectsEqual(kl, lk)));
