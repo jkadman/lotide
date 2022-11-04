@@ -21,11 +21,11 @@ const eqArrays = function(arr1, arr2) {
 
  const middle = function(array) {
   let midpoint = [];
-  let mid = array.length / 2;
+  let mid = Math.floor(array.length / 2);
   if (array.length <= 2) {
     return midpoint;
   } else if (array.length % 2 !== 0) {
-    midpoint = Math.ceil(mid);
+    midpoint = array[mid]
   } else {
     midpoint = [array[mid - 1], array[mid]];
   }
@@ -35,14 +35,20 @@ const eqArrays = function(arr1, arr2) {
 let small = [1, 2];
 let odd = [1, 2, 3, 4, 5];
 let even = [1, 2, 3, 4, 5, 6];
-// console.log(middle([small]));
-// console.log(middle(odd));
-// console.log(middle(even));
-assertArraysEqual(middle(small), [1, 2]);
-// assertArraysEqual(middle([small]), [1, 2]);
- assertArraysEqual(middle(odd), 3);
-assertArraysEqual(middle(even), [3, 4]);
-assertArraysEqual(middle(even), [7, 4]);
+let test1 = [10, 45, 30, 29, 44, 56, 46];
+let test2 = [9, 5, 2, 87, 44, 32];
+const test3 = [45, 9, 67, 23, 21, 29, 80, 3, 77]
+console.log(middle(test1))
+console.log(middle(test2))
+console.log(middle([small]));
+console.log(middle(odd));
+console.log(middle(even));
+console.log(middle(test3))
+// assertArraysEqual(middle(small), [1, 2]);
+// // assertArraysEqual(middle([small]), [1, 2]);
+//  assertArraysEqual(middle(odd), 3);
+// assertArraysEqual(middle(even), [3, 4]);
+// assertArraysEqual(middle(even), [7, 4]);
 
  /*
 Implement middle which will take in an array and return the middle-most element(s) of the given array.
