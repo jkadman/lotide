@@ -8,21 +8,12 @@ A commonly used function for arrays is to retrieve the first element from the ar
 // tell the function to return the first item of the array
 // convert the item into a string
 
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    return `🐵🐵🐵 Assertion Passed: ${actual} === ${expected}`
-  } else {
-    return `😆😆😆 Assertion Failed: ${actual} !== ${expected}`
-  }
-};
+const assertEqual = require('./assertEqual');
 
 const head = function(array) {
   return array[0];
-}
+};
 
-console.log(assertEqual(head([5,6,7]), 5));
-console.log(assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello"));
-console.log(assertEqual(head([8,6,7]), 5));
-console.log(assertEqual(head([5]), 5));
-console.log(assertEqual(head([8]), 5));
-console.log(assertEqual(head([]), 5));
+module.exports = head;
+
+

@@ -8,10 +8,11 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-console.log(assertEqual("Lighthouse Labs", "Bootcamp"));
-console.log(assertEqual(1, 1));
-console.log(assertEqual('fart', 'fart'));
-console.log(assertEqual('block', 'bloc'));
-console.log(assertEqual(4, 4));
-console.log(assertEqual(4, 9));
-console.log(assertEqual(4, '4'));
+module.exports = assertEqual;
+
+// console.log(assertEqual("Lighthouse Labs", "Bootcamp"));
+// console.log(assertEqual(1, 1));
+// console.log(assertEqual('block', 'bloc'));
+// console.log(assertEqual(4, 4));
+// console.log(assertEqual(4, 9));
+// console.log(assertEqual(4, '4'));
