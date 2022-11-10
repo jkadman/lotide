@@ -8,7 +8,8 @@ A commonly used function for arrays is to retrieve the first element from the ar
 // tell the function to return the first item of the array
 // convert the item into a string
 
-const assertEqual = require('./assertEqual');
+// const assertEqual = require('./assertEqual');
+const _ = require('./index')
 
 const head = function(array) {
   return array[0];

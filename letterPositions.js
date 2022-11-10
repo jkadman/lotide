@@ -1,23 +1,4 @@
-const assertArraysEqual = function(arr1, arr2) {
-  if (eqArrays(arr1, arr2)) {
-    console.log(`🐵🐵🐵 Assertion Passed: [${arr1}] === [${arr2}]`);
-  } else {
-    console.log(`😆😆😆 Assertion Failed: [${arr1}] !== [${arr2}]`);
-  }
-};
-
-
-const eqArrays = function(arr1, arr2) {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
+const _ = require('./index');
 
 /*
 We'll implement a new function letterPositions which will return all the indices (zero-based positions) in the string where each character is found.
@@ -45,9 +26,6 @@ const letterPositions = function(sentence) {
   return results;
 };
 
+module.exports = letterPositions;
 
-test = 'Hello';
-test2 = "lighthouse in the house";
-console.log(letterPositions(test));
-console.log(letterPositions(test2));
-assertArraysEqual(letterPositions(test).H, 0);
+

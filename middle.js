@@ -1,5 +1,6 @@
-const assertArraysEqual = require('./assertArraysEqual');
-const eqArrays = require('./eqArrays');
+// const assertArraysEqual = require('./assertArraysEqual');
+// const eqArrays = require('./eqArrays');
+const _ = require('./index');
 
  const middle = function(array) {
   let midpoint = [];
@@ -27,3 +28,4 @@ Need an if statement to account for: array is < 3, array.length % 2 !== 0, array
 how to find middle: odd : (length - 1) / 2; even: var mid = array.length / 2, midpoint = [array[var]. array[var - 1]]
 
  */
+
