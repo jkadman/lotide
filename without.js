@@ -31,4 +31,4 @@ const without = function(source, itemsToRemove) {
 const originalArray = [1, 2, 3];
 const removeArray = [3];
 const expectedArray = [1, 2];
-assertArraysEqual(without([1, 2, 3], [3]), [1, 4]); 
+assertArraysEqual(without(originalArray, removeArray), expectedArray); 
